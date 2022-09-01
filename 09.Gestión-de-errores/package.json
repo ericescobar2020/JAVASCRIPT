@@ -1,0 +1,19 @@
+{
+  "name": "hola-mundo-trabajando",
+  "version": "1.0.0",
+  "description": "Este es mi primer proyecto con node Openbootcam",
+  "main": "errores-javascript.js",
+  "scripts": {
+    "start": "index.js"
+  },
+  "keywords": [
+    "holamundo",
+    "first",
+    "proyect"
+  ],
+  "author": "eric escobar",
+  "license": "ISC",
+  "dependencies": {
+    "winston": "^3.8.1"
+  }
+}

@@ -1,0 +1,320 @@
+-Acordate de crear un packet.js para que pueda correr la dependencia. 
+Como primer paso: Vamos a instalar la dependencia https://www.npmjs.com/package/http-server
+como segundo paso vamos instalar de forma global: npm install --global http-server
+-Luego entramos en el visual studio code y vamos intalarlo en la carpeta donde estamos trabajando. 
+-Archivo archivo packet.js vamos a configurar el script=
+          "scripts": {
+    "start": "http-server ."
+  },
+vamos crear el start : con el htttp-serve . 
+
+-Luego vamos a poner en la terminal: npm start y va aparecer una serie de conceptos. 
+
+-luego que ya este instalado vamos a crear un index.js osea un archivo de javascripts 
+
+
+ <title>Mi primera pagina web con javascript</title>
+    <script src="index.js"> </script>  
+    -Para trabajar en html con javascript usar <script>
+
+-Luego vamos a dar un click a este concepto  http://127.0.0.1:8080 esta en la terminal cuando ponemos start, es 
+el link de nuestra pagina web
+
+/////////////////////////////////////////////////////
+
+-Vamos a trabajar con librerias 
+#Vamos ingresar a la siguiente libreria que se llama typelt es una libreria que da efecto o dinamismo a los texto. 
+https://www.typeitjs.com/
+
+-Cuando estemos adentro de la pagina entramos en la secsion: documents "Vanilla JavaScript"
+-Copiamos este links: <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+-Lo pegamos en el archivo htrml en secion de titutlos abajo.: 
+tienen que quedar asi 
+    
+ <h1>Hola mundo, me llamo eric escobar</h1>
+    <p id="parrafo">Esto es un parrafo</p>
+    <span id="myElement"></span>
+    <script src="index.js"> </script>  
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+
+-luego vamos acrear un nuevo <script> y tiene que quedar asi: 
+<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <script>
+        new TypeIt("#myElement", {
+          strings: "This is what will be typed!",
+        }).go();
+      </script>
+- entramos a la pagina donde estamos trabajando en google schrome y vemos el efecto del codigo. 
+
+-Despues de ver el cogigo vamos a volver al visual studio y creamos un archivo de js que se llame animaciones 
+vamos a copiar el codigo:
+
+    new TypeIt("#myElement", {
+          strings: "This is what will be typed!",
+        }).go();
+vamos a pegarlo en el archivo de animaciones.
+
+- Volvemos a entrar al archivo de html y borramos el codigo: 
+          new TypeIt("#myElement", {
+          strings: "This is what will be typed!",
+        }).go();
+para que luego ponemos  este codigo que hace referencia en el archivo de animaciones: 
+     <script src="animaciones.js"> </script>
+
+/////////////////////////////////////////////////
+
+Manejo de eventos en JavaScript
+
+-Creo un formulario html un archivo en la carpeta donde estoy trabajando: 
+Despues creo en el visual estudio un archivo html f5 
+luego de poner los titulos vamos a poner estos codigos 
+
+ <form action="/" method="post" id="formulario"> 
+    <input type="text" name="nombre" placeholder="Cual es tu nombre"></input>  
+     <input type="submit" value="enviar"> </input>  
+</form>
+
+-despues vamos a crear un archivo index.js en la carpeta formulario. 
+-luego vamos al archivo html de formulario y ponemos este este codigo entre el body y html 
+
+</body>
+<script src="index2.js"></script>
+</html>
+
+-volvemos en el archivo index2.js y creamos lo siguiente 
+
+const f= document.getElementById("formulario")
+console.log(f)
+
+f.addEventListener("submit",evento=>{
+    console.log(evento)
+    evento.preventDefault() // esto significa que evite el comportarmiento por defecto que 
+                            // que no me de error en la pagina
+})
+
+-cargamos la página de google para ver el comportamiento y vemos que el archivo ya no me da ese erorr. 
+
+
+////////////////////////////////////////////////////
+
+Eventos personalizados
+
+-creamos una nueva carpeta que se llame eventos en lo cual vamos crear dos archivos uno de html y el otro de javascript 
+en el archivo html ponemos entre body: 
+       
+ <body>
+    <h1 id="h-texto">Hola</h1>
+</body>
+
+- entre el body y el html ponemos el 
+
+</body>
+ <script src="index3.js"></script>
+</html>
+
+-despues entremoa el archivo index3.js y poenmos el sigueitne codigo: 
+
+const htexto = document.getElementById("h-texto");
+console.log(htexto);
+
+- luego volvemos al google de la terminal tiene que aparecer este codigo: 
+  
+  h1#h-texto // en la terminal de google
+ 
+- despues volvemos al visual studio en el archivop index3.js y ponemos lo siguiente 
+
+const htexto = document.getElementById("h-texto");
+console.log(htexto);
+
+htexto.addEventListener("cambioTexto", evento =>{
+    console.log(evento.detail)
+    htexto.innerText=evento.detail.texto
+    htexto.style.color=evento.detail.color
+})  //esto se llama vinvcular a un evento 
+
+function cambiarTexto(nuevoTexto,color){
+    const evento= new CustomEvent ("cambioTexto",{
+        detail: {
+            texto: nuevoTexto,
+            color
+        }
+    })
+    htexto.dispatchEvent(evento)
+}
+
+/*despues ponemos en la consola de google la funcion que creamos que seria 
+"cambiarTexto(este es un nuevo texto, blue)""
+*/
+la teriminal de google va cambiar las letras y el color 
+
+//////////////////////////////////////////////////////////////////////////////
+
+----JQuery
+Vamos crear una carpeta nuevo en el visual que lo vamos a nombrar JQuery y despues vamos a crear dos archivos uno de index html y JS 
+-vamos a trbajajr con el archivo html y vamos a poner lo siguiente. 
+ <title>trabajando con JQuery</title>
+y vamos a pegar el link de JQuery debajo de title el link de QJuery que esta en dowlang https://code.jquery.com/jquery-3.6.0.min.js
+
+- tambien escribimos esto entre body 
+<body>
+    <h1>Trabajando con JQuery </h1>
+</body>
+
+-Luego vamos anexar con el archivo JS para luego trabajar en ella 
+</body>
+    <script src="indexJQ.js"></script>
+</html>
+
+-luego trabajamos en el archivo JS y ponemos la siguiente 
+
+// la forma de trabajar seriia algo asi 
+// selector y accion
+// $("li") . hide() // sirve para ocultar los elementos 
+
+
+// $(document).ready() => {}
+$(()=>{
+    $("h1").hide()
+})
+
+--- Volvemos al archivo html y creamos dos botones entre ul y body 
+ </ul>
+    <button>hide</button>
+    <button>show</button>
+</body>
+
+-Luego en los ul de los elementos que habiamos creado vamos a poner un id para identificarlo y trabajar de 
+forma individual para poder saleccionarlo en JS y va quedar asi: 
+
+<ul>
+        <li id="el-1">Elemento uno</li>      // id="el-1" para identificarlo.
+         <li id="el-2">Elemento dos</li>
+        <li id="el-3">Elemento tres</li>
+        <li id="el-4">Elemento cuatro</li>
+</ul>
+
+
+-- Volvemos el archivo JS osea el indexQJ.JS y luego vamos a poner lo siguiente para poder 
+trabajar de manera individual. "IMPORTANTE CON EL SIMBOLO # HACEMOS REFERENCIA LOS id="el-1""
+
+--Vovlemos al archivo html y slelecionamos los button para poder trabajar de manera indivudal con class 
+      <button class="hide-btn">hide</button>
+    <button class="show-btn">show</button>
+
+--Despues volvemos al archivo JS y trabajamos con los button seleccionados y ponemos lo siguiente 
+ 
+     $(".hide-btn").click(()=>{
+        $("h1").hide()
+    })
+    $(".show-btn").click(()=>{
+        $("h1").show()
+    })
+
+-- si queremos un efecto que desaparezca y aparezca de forma mas elelgante ponemos este codigo
+
+   $(".hide-btn").click(()=>{
+        // $("h1").hide()
+        $("h1").fadeOut()
+    })
+    $(".show-btn").click(()=>{
+        // $("h1").show()
+        $("h1").fadeIn()
+    })
+
+--Volvemos al archivo html y creamo una nueva linea, creamos un nuevo botton 
+
+   <br/>
+    <button class="new-element">Add element</button>
+</body>
+
+--Volvemos al archivo JS y agregamos la nueva clase de new element con una funcion de agregar 
+nuevo elemento 
+
+   $(".new-element").click(()=>{
+        $("ul").append("<li>new element</li>")
+    })
+--Despues nos fijamos en google lo que realiza esta funcion 
+
+--Podemos crear elementos al principio tambien si poenemos esta funcion:
+
+  $(".new-element").click(()=>{
+        // $("ul").append("<li>new element</li>")
+        $("ul").prepend("<li>new element</li>")
+    })
+
+--Otra funcion que puede servir es cambiar de color cuando señalo con el mouse en los elemenetos 1,2,3,4
+
+    $("li").mouseenter((elem)=>{
+        elem.target.style.color ="blue"
+    })   // el problema esta cuando no puedo vovler los elementos al mismo color que seria el negro.
+
+--Para eso creamos otra funcion en lo cual podemos resolverlo 
+   $("li").mouseleave(elem=>{
+        elem.target.style.color="black"
+    })  // vuelve los elementos el color negro osea su color original. 
+
+
+////////////////////////////////////////////////////
+Alertas y Dialogos en pantalla
+
+--Vamos crear dos archivos diferentes uno html y el otro JS dialogos
+vamos a crear en html el titulo dialogos y luego vamos a anexar el archivo de JS con el html que seria dialogos.js
+y quedaria asi: 
+   
+   </body>
+<script src="dialogo.js"></script>
+</html>
+
+--Luegos creamos entre el body un h1 con el titulo 
+
+<h1>Dialogos por pantalla</h1>
+
+--luego creamos un button entre body 
+
+<button id="btn">boton</button> // con su id 
+
+--Luego vamos el archivo de Js y trabajamos con el boton que creamos en html y ademas ponemos funcionalidad al boton 
+con alerta.
+
+ const boton = document.querySelector("#btn") // ya que usamos id tenemos que usar # para seleccionarlo
+// console.log(boton); // para comprobar si funciona 
+
+boton.addEventListener("click",()=>{
+    // console.log("click")
+    alert("se ha hecho clcick, bien alli")
+
+}) 
+
+-- otras opciones mas avanzadas 
+    const respuesta = confirm("¿Seguro?")
+      if (respuesta){
+        console.log("estas de acuerdo")
+      }else {
+        console.log("No estas de acuerdo")
+      }
+})
+
+--Luego volvemos otros archivos de html y creamo otro button que nos pida mas informacion 
+
+ <button id="informarcion">Mas info informarcion</button>
+
+--Luego volvemos al archivo JS para conectar ese botun de informacion que nos pide y vamos a poner nombre 
+ 
+const botoninfo= document.querySelector("#informacion")
+botoninfo.addEventListener("click", ()=>{
+    const nombre = prompt ("¿Cual es tu nombre?")
+    if(nombre){
+        console.log("Tu nombre es" + nombre)
+    }else{
+        console.log("No has introducido nada")
+    }
+})
+
+
+
+
+
+
+
+
+

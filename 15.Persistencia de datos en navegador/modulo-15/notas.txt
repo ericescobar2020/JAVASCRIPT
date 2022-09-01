@@ -1,0 +1,46 @@
+-Para este modulo lo que vamos a realizar es crear un archivo html y javascript
+-Vamos anexar el archivo index.js en el html 
+   
+    </body>
+<script src="index.js"></script>
+  </html>
+
+
+-Despues abrimos un go server para que se vea reflejado en el google y presiono f12 
+ para usar las heramientas de desarrolador 
+-Entramos de nuevo el go server de la pagina de google y vamos donde dice console, network 
+ souerce, en la doble flechita hacemos click y va aparecer la opcion application 
+ presionamos enter. 
+
+-Como podemos usar la informacion en el local storage, entramos al archivo index.js
+ #1
+
+ // informacion del local storage #1
+localStorage.setItem("nombre","Eric")
+
+-Entramos en la pagina de google donde estamos trabajando y refrescamos el localStorage
+donde dice filter en el circulito 
+
+-ahora si quiero aditar el nombre de "Eric" tenemos que hacer #2
+
+//#2
+localStorage.setItem("nombre","Emanuel")
+- Hago lo mismo. 
+
+- ahora si quiero mostrarlo en la consola pongo el siguiente codigo
+  que me muestra en la pantalla para visualizarlo en google
+   
+    console.log(localStorage("nombre"))
+
+-Otro ejemplo mas claro pero con un objeto seria de esta forma 
+  
+localStorage.setItem("persona",{nombre: "eric", eddad:25})
+
+console.log(localStorage.getItem("persona"))
+
+-Si queremos guardar un array de objetos hacemos de esta forma 
+atraves del siguietne codigo que seria: JSON.stringify ()
+
+localStorage.setItem("persona",JSON.stringify({nombre: "eric", eddad:25}))
+
+-Como eliminar un localStorage, usando el siguiente codigo: 

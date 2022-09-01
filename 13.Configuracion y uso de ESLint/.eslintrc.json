@@ -1,0 +1,11 @@
+// Es un archivo de reglas de configuracion de ES lint 
+{
+"rules": {
+        // Override our default settings just for this directory
+        "eqeqeq": "warn",
+        "strict": "off",
+        "quotes": ["warn", "double"],
+        "semi": ["error","never"],
+        "no-dupe-keys":"error"
+    }
+}

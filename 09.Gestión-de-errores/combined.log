@@ -1,0 +1,15 @@
+{"level":"info","message":"hola esto es un mensaje informa","service":"user-service"}
+{"level":"warn","message":"esto es un mensjae de advertencia","service":"user-service"}
+{"level":"error","message":"esto es un error","service":"user-service"}
+{"level":"info","message":"hola esto es un mensaje informa","service":"user-service"}
+{"level":"debug","message":"esto es un mensjae de debug","service":"user-service"}
+{"level":"warn","message":"esto es un mensjae de advertencia","service":"user-service"}
+{"level":"error","message":"esto es un error","service":"user-service"}
+{"level":"info","message":"hola esto es un mensaje informa"}
+{"level":"debug","message":"esto es un mensjae de debug"}
+{"level":"warn","message":"esto es un mensjae de advertencia"}
+{"level":"error","message":"esto es un error"}
+{"level":"info","message":"hola esto es un mensaje informa"}
+{"level":"debug","message":"esto es un mensjae de debug"}
+{"level":"warn","message":"esto es un mensjae de advertencia"}
+{"level":"error","message":"esto es un error"}
